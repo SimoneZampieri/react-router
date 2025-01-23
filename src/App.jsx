@@ -7,9 +7,15 @@ import AboutPage from "./pages/AboutPage";
 
 function App() {
   return (
-    <>
-      <h1>Titolo</h1>
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route Component={DefLayout}>
+          <Route path="/" Component={HomePage} />
+          <Route path="/about" Component={AboutPage} />
+          <Route path="/posts" Component={PostListPage} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
