@@ -1,9 +1,5 @@
-function PostList = () =>{
-    return (
-        <h1>
-            Lista Post
-        </h1>
-    )
+function PostList() {
+  return <h1>Lista Post</h1>;
 }
 
-export default PostList
+export default PostList;
