@@ -3,14 +3,14 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 
 const PostDetail = () => {
-  const { id } = useParams(); // Get the post ID from the URL parameters
+  const { id } = useParams();
   const baseApiUrl = import.meta.env.VITE_BASE_API_URL;
   const [post, setPost] = useState(null);
   const navigate = useNavigate();
 
   const fetchPost = () => {
     axios
-      .get(`${baseApiUrl}/posts/${id}`) // Fetch the specific post
+      .get(`${baseApiUrl}/posts/${id}`)
       .then((res) => {
         setPost(res.data);
       })
@@ -21,7 +21,7 @@ const PostDetail = () => {
 
   const deleteHand = () => {
     axios
-      .delete(`${baseApiUrl}/posts/${id}`) // Use the post ID for deletion
+      .delete(`${baseApiUrl}/posts/${id}`)
       .then(() => {
         navigate("/posts");
       })
@@ -31,7 +31,7 @@ const PostDetail = () => {
   };
 
   useEffect(() => {
-    fetchPost(); // Fetch the specific post on component mount
+    fetchPost();
   }, [id]);
 
   return (
