@@ -49,7 +49,7 @@ const PostCreate = () => {
                         type="text"
                         name="name"
                         className="form-control"
-                        placeholder="Nome pizza"
+                        placeholder="Titolo..."
                         value={formData.title}
                         onChange={inputHandler}
                       />
@@ -61,7 +61,7 @@ const PostCreate = () => {
                         type="text"
                         name="image"
                         className="form-control"
-                        placeholder="URL immagine"
+                        placeholder="URL immagine..."
                         value={formData.image}
                         onChange={inputHandler}
                       />

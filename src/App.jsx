@@ -6,6 +6,7 @@ import PostListPage from "./pages/PostListPage";
 import AboutPage from "./pages/AboutPage";
 import PostDetail from "./pages/PostDetailPage";
 import ErrorPage from "./pages/ErrorPage";
+import PostCreate from "./pages/PostCreatePage";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/about" Component={AboutPage} />
           <Route path="/posts" Component={PostListPage} />
           <Route path="/dettaglio-post/:id" Component={PostDetail} />
+          <Route path="/nuovo-post" Component={PostCreate} />
           <Route path="*" Component={ErrorPage} />
         </Route>
       </Routes>

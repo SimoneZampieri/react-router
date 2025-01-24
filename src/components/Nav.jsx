@@ -20,7 +20,7 @@ function Nav() {
           </NavLink>
         </li>
         <li>
-          <NavLink to="nuovo-post" className="nav-link">
+          <NavLink to="/nuovo-post" className="nav-link">
             Aggiungi un Nuovo post
           </NavLink>
         </li>
