@@ -21,18 +21,65 @@ const PostCreate = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleNewPost = (e) => {
     e.preventDefault();
-    const tags = formData.tags.split(",").map((tag) => tag.trim());
-    const newPost = { ...formData, tags: tags };
-    axios
-      .post(`${baseApiUrl}/posts`, newPost)
-      .then((res) => {
-        fetchPosts();
-        setFormData(initialFormData);
-      })
-      .catch((error) => {
-        console.error("Error creating post:", error);
-      });
+    axios.post(`${baseApiUrl}/posts`, newPost).then((res) => {
+      setFormData(initialFormData);
+      navigate("/posts");
+    });
   };
+
+  return (
+    <>
+      <div className="container my-5">
+        <div className="card">
+          <div className="card-body">
+            <h1 className="my-3">Nuovo Post</h1>
+            <div className="container my-5">
+              <div className="card">
+                <div className="card-body">
+                  <div className="card-title">
+                    <h2>Scrivi un nuovo post</h2>
+                  </div>
+                  <form action="" onSubmit={handleNewPost}>
+                    <div className="mb-3">
+                      <label htmlFor="name">Titolo</label>
+                      <input
+                        id="name"
+                        type="text"
+                        name="name"
+                        className="form-control"
+                        placeholder="Nome pizza"
+                        value={formData.title}
+                        onChange={inputHandler}
+                      />
+                    </div>
+                    <div className="mb-3">
+                      <label htmlFor="image">URL immagine</label>
+                      <input
+                        id="image"
+                        type="text"
+                        name="image"
+                        className="form-control"
+                        placeholder="URL immagine"
+                        value={formData.image}
+                        onChange={inputHandler}
+                      />
+                    </div>
+                    <div className="mb-3">
+                      <button className="btn btn-primary" type="submit">
+                        Aggiungi Post
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
 };
+
+export default PostCreate;
