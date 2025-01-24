@@ -47,7 +47,7 @@ const PostDetail = () => {
             />
             <p>{post?.content}</p>
             <p>
-              Tags: <strong>{post?.tags.join(", ")}</strong>
+              Tags: <strong>{post?.tags?.join(", ")}</strong>
             </p>
             <div className="d-flex justify-content-between">
               <button className="btn btn-success" onClick={() => navigate(-1)}>
