@@ -23,6 +23,7 @@ const PostCreate = () => {
 
   const handleNewPost = (e) => {
     e.preventDefault();
+    const newPost = { ...formData };
     axios.post(`${baseApiUrl}/posts`, newPost).then((res) => {
       setFormData(initialFormData);
       navigate("/posts");
@@ -43,11 +44,11 @@ const PostCreate = () => {
                   </div>
                   <form action="" onSubmit={handleNewPost}>
                     <div className="mb-3">
-                      <label htmlFor="name">Titolo</label>
+                      <label htmlFor="title">Titolo</label>
                       <input
-                        id="name"
+                        id="title"
                         type="text"
-                        name="name"
+                        name="title"
                         className="form-control"
                         placeholder="Titolo..."
                         value={formData.title}
