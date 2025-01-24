@@ -2,16 +2,22 @@ import { NavLink } from "react-router-dom";
 
 function Nav() {
   return (
-    <nav>
-      <ul>
-        <li>
-          <NavLink to="/">Home</NavLink>
+    <nav className="conatainer p-2 ">
+      <ul className="nav d-flex justify-content-between">
+        <li className="nav-item">
+          <NavLink to="/" className="nav-link">
+            Home
+          </NavLink>
         </li>
         <li>
-          <NavLink to="/about">Chi Siamo</NavLink>
+          <NavLink to="/about" className="nav-link">
+            Chi Siamo
+          </NavLink>
         </li>
         <li>
-          <NavLink to="/posts">Lista Post</NavLink>
+          <NavLink to="/posts" className="nav-link">
+            Lista Post
+          </NavLink>
         </li>
       </ul>
     </nav>

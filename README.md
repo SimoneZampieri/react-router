@@ -13,3 +13,10 @@ Creiamo il frontend del nostro Blog e le sue pagine!
   Centralizzare la Navbar grazie a un Layout
   Gestire la classe active
   Stampare il menu dinamicamente
+
+### Parte 2
+
+Completiamo il nostro routing con l’aggiunta delle pagine di dettaglio!
+
+- Aggiungiamo i link alla lista dei post
+- Facciamo quindi in modo di raggiungere la pagina di dettaglio del singolo post
