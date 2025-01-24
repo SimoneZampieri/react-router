@@ -19,6 +19,11 @@ function Nav() {
             Lista Post
           </NavLink>
         </li>
+        <li>
+          <NavLink to="nuovo-post" className="nav-link">
+            Aggiungi un Nuovo post
+          </NavLink>
+        </li>
       </ul>
     </nav>
   );
