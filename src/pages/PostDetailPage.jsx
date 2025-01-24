@@ -3,24 +3,25 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 
 const PostDetail = () => {
+  const { id } = useParams(); // Get the post ID from the URL parameters
   const baseApiUrl = import.meta.env.VITE_BASE_API_URL;
   const [post, setPost] = useState(null);
   const navigate = useNavigate();
 
-  const fetchPosts = () => {
+  const fetchPost = () => {
     axios
-      .get(`${baseApiUrl}/posts`)
+      .get(`${baseApiUrl}/posts/${id}`) // Fetch the specific post
       .then((res) => {
         setPost(res.data);
       })
       .catch((error) => {
-        console.error("Error fetching posts:", error);
+        console.error("Error fetching post:", error);
       });
   };
 
-  const deleteHand = (id) => {
+  const deleteHand = () => {
     axios
-      .delete(`${baseApiUrl}/posts/${id}`)
+      .delete(`${baseApiUrl}/posts/${id}`) // Use the post ID for deletion
       .then(() => {
         navigate("/posts");
       })
@@ -30,8 +31,8 @@ const PostDetail = () => {
   };
 
   useEffect(() => {
-    fetchPosts();
-  }, []);
+    fetchPost(); // Fetch the specific post on component mount
+  }, [id]);
 
   return (
     <>
@@ -44,9 +45,12 @@ const PostDetail = () => {
               src={post?.image}
               alt={post?.title}
             />
-            <p>{post.content}</p>
+            <p>{post?.content}</p>
             <p>
-              Tags: <strong>{post?.tags.join(", ")}</strong>
+              Tags:{" "}
+              <strong>
+                {Array.isArray(post?.tags) ? post.tags.join(", ") : ""}
+              </strong>
             </p>
             <div className="d-flex justify-content-between">
               <button className="btn btn-success" onClick={() => navigate(-1)}>
