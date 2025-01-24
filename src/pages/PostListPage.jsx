@@ -36,7 +36,7 @@ const PostList = () => {
                     key={post.id}
                     className="list-group-item d-flex justify-content-between"
                   >
-                    <span>{post.name}</span>
+                    <span>{post.title}</span>
                     <Link
                       className="btn btn-success"
                       to={`/dettaglio-post/${post.id}`}
